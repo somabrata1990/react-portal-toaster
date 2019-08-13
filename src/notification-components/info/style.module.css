@@ -1,0 +1,33 @@
+.App {
+    text-align: center;
+    overflow-wrap: break-word;
+    margin: 10px;
+    background-color: #32dffb;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: #ffffff;
+    font-weight: 600;
+  }
+  
+  .size {
+    border-radius: 10px;
+    min-width: 350px; /* minimum width device considered is of 360px */
+    min-height: 50px;
+  }
+  
+  .body {
+    padding: 10px 0px;
+  }
+
+  .icon{
+    height: 100%;
+    padding: 0px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .actions {
+    margin: 10px;
+  }
