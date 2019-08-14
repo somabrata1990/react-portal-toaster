@@ -1,0 +1,33 @@
+.header {
+    height: 50px;
+    background-color: black;
+}
+
+.body {
+    min-height: calc(100% - 50px);
+    display: flex;
+    justify-content: flex-start;
+}
+
+.sidePanel{
+    float: left;
+    width: 450px;
+    background-color: blue;
+}
+
+.mainBody {
+    height: calc(100% - 50px);
+}
+
+.mainBodyWrapper{
+    width: 100%;
+    float: left;
+    background-color: yellow;
+}
+
+.mainBodyFooter {
+    width: 100%;
+    bottom: 0px;
+    height: 50px;
+    background-color: aqua;
+}

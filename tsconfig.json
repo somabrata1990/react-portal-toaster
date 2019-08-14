@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": "./assets",
     "outDir": "./dist/",
     "sourceMap": true,
     "noImplicitAny": true,
@@ -7,10 +8,16 @@
     "target": "es5",
     "jsx": "react",
     "esModuleInterop": true,
+    "isolatedModules": true,
     "experimentalDecorators": true,
     "lib": ["es5", "es6", "dom"],
   },
   "include": [
-    "./src/**/*"
-  ]
+    "./src/**/*",
+    "declarations.d.ts",
+    "./example/**/*",
+  ],
+  "exclude": [
+    "node_modules"
+]
 }
