@@ -88,7 +88,7 @@
 /* 0 */
 /***/ (function(module, exports) {
 
-module.exports = react;
+module.exports = React;
 
 /***/ }),
 /* 1 */
@@ -627,7 +627,7 @@ exports.default = PortalContainer;
 /* 6 */
 /***/ (function(module, exports) {
 
-module.exports = reactDom;
+module.exports = ReactDom;
 
 /***/ }),
 /* 7 */
