@@ -1,8 +1,6 @@
 {
   "compilerOptions": {
-    "baseUrl": "./assets",
     "outDir": "./dist/",
-    "sourceMap": true,
     "noImplicitAny": true,
     "module": "commonjs",
     "target": "es5",
@@ -14,8 +12,7 @@
   },
   "include": [
     "./src/**/*",
-    "declarations.d.ts",
-    "./example/**/*",
+    "declarations.d.ts"
   ],
   "exclude": [
     "node_modules"

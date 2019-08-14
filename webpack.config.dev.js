@@ -1,12 +1,18 @@
 const path = require('path');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-    entry: path.join(__dirname, './src/index.tsx'),
-    output: {
-        filename: 'react-portal-toaster.js',
-        path: path.join(__dirname, 'dist')
+    devServer: {
+        historyApiFallback: true,
+        compress: true,
+        port: 9000
     },
-    mode: "production",
+    mode: "development",
+    entry: path.join(__dirname, './example/index.js'),
+    output: {
+        filename: 'index.js',
+        path: path.join(__dirname, 'dist-example')
+    },
     module: {
         rules: [
             {
@@ -35,15 +41,15 @@ module.exports = {
             }
         ]
     },
+    plugins: [new HtmlWebpackPlugin({
+        template: "./example/index.html",
+        filename: "./index.html"
+    })],
     optimization: {
-		// We do not want to minimize our code.
+		// We no not want to minimize our code.
 		minimize: false
 	},
-  resolve: {
-      extensions: [".tsx", ".ts", ".js"]
-  },
-  externals: {
-    "react": "react",
-    "react-dom": "reactDom"
-  }
+    resolve: {
+        extensions: [".tsx", ".ts", ".js"]
+    }
 };

@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from 'react-dom';
-import PortalContainer from "../src/portal/Portal";
+import PortalContainer from "../dist";
 import Layout from "./Layout";
 
 const App = () => {
