@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./Layout.module.css";
-import {SuccessToaster, ErrorToaster, InfoToaster} from "../dist";
+import {SuccessToaster, ErrorToaster, InfoToaster} from "../src";
 
-import {push} from "../dist";
+import {push} from "../src";
 
 const NotificationBox = (props) => {
     return <SuccessToaster {...props}>Hello from Side Panel!!!!!!!</SuccessToaster>
