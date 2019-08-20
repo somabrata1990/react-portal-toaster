@@ -1,18 +1,18 @@
 import React from "react";
 import styles from "./Layout.module.css";
 import {SuccessToaster, ErrorToaster, InfoToaster} from "../src";
-
+import {InodeProps} from "../src/manager";
 import {push} from "../src";
 
-const NotificationBox = (props) => {
+const NotificationBox = (props: InodeProps) => {
     return <SuccessToaster {...props}>Hello from Side Panel!!!!!!!</SuccessToaster>
 }
 
-const ErrorNotificationBox = (props) => {
+const ErrorNotificationBox = (props: InodeProps) => {
     return <ErrorToaster {...props}>Hello from Side Panel!!!!!!!</ErrorToaster>
 }
 
-const InfoNotificationBox = (props) => {
+const InfoNotificationBox = (props: InodeProps) => {
     return <InfoToaster {...props}>Hello from Side Panel!!!!!!!Hello from Side Panel!!!!!!!Hello from Side Panel!!!!!!!Hello from Side Panel!!!!!!!Hello from Side Panel!!!!!!!</InfoToaster>
 }
 

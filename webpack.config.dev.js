@@ -8,7 +8,7 @@ module.exports = {
         port: 9000
     },
     mode: "development",
-    entry: path.join(__dirname, './example/index.js'),
+    entry: path.join(__dirname, './example/index.tsx'),
     output: {
         filename: 'index.js',
         path: path.join(__dirname, 'dist-example')
