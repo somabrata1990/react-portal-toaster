@@ -13,6 +13,7 @@ module.exports = {
         filename: 'index.js',
         path: path.join(__dirname, 'dist-example')
     },
+    devtool: "source-map",
     module: {
         rules: [
             {

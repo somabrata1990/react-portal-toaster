@@ -9,3 +9,5 @@ declare module '*.svg' {
     const styles: any;
     export default styles;
   }
+
+  declare module 'react-portal-toaster';
