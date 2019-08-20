@@ -1,7 +1,7 @@
 "use strict";
 
-// if (process.env.NODE_ENV === "production") {
-//   module.exports = require("./dist/react-portal-toaster.min.js");
-// } else {
-  module.exports = require("./dist/react-portal-toaster.js");
-// }
+if (process.env.NODE_ENV === "production") {
+  module.exports = require("./dist/react-portal-toaster.min.js");
+} else {
+  module.exports = require("./index.js");
+}

@@ -3,6 +3,7 @@ import SuccessToaster from "./notification-components/success";
 import ErrorToaster from "./notification-components/error";
 import InfoToaster from "./notification-components/info";
 import {push} from "./manager";
+import "babel-polyfill";
 
 export default PortalContainer;
 export {

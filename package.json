@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
+    "build:exmpl": "webpack --config ./webpack.config.dev.js",
     "start": "webpack-dev-server --config webpack.config.dev.js"
   },
   "repository": {
@@ -38,5 +39,8 @@
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.6",
     "webpack-dev-server": "^3.8.0"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0"
   }
 }
