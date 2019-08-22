@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import PortalManager from "../manager/";
 import {Iconfig} from "../manager";

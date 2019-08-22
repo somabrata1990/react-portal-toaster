@@ -7,6 +7,7 @@ module.exports = {
         path: path.join(__dirname, 'dist')
     },
     mode: "production",
+    devtool: "source-map",
     module: {
         rules: [
             {
@@ -37,13 +38,13 @@ module.exports = {
     },
     optimization: {
 		// We do not want to minimize our code.
-		minimize: true
+		minimize: false
 	},
   resolve: {
       extensions: [".tsx", ".ts", ".js"]
   },
   externals: {
-    "react": "React",
-    "react-dom": "ReactDom"
+    'react': 'react',
+    'react-dom': 'react-dom'
   }
 };
