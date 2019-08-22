@@ -1,40 +1,19 @@
-import React, { Dispatch, ReactNode } from "react";
+import React, {useReducer, useEffect, useCallback} from "react";
 import styles from "./Manager.module.css";
 import Modal from "../modal/Modal";
 
-interface Iprops {
-    config?: Iconfig;
-}
-
-export interface InodeProps {
-    handleClose: (e: React.SyntheticEvent) => void;
-    children?: ReactNode;
-}
-
-export interface Iconfig {
-    closeTime?: number;
-    autoClose?: boolean;
-    backgroundColor?: string;
-}
-
-interface Ipayload {
-    uniqueID: string;
-    node: React.ComponentType<InodeProps>;
-    config?: Iconfig;
-}
-
-let defaultConfig: Iconfig = {
+let defaultConfig = {
     closeTime: 5000,
     autoClose: true,
     backgroundColor: ""
 }
 
-const reducer = (state: Ipayload[], action: { type: string; payload: any; }) => {
+const reducer = (state=[], action) => {
     switch(action.type) {
         case "REGISTER":
             return [...state, action.payload];
         case "UNREGISTER":
-            return state.filter((node: Ipayload) => {
+            return state.filter((node) => {
                 return node.uniqueID !== action.payload;
             });
         default:
@@ -42,17 +21,17 @@ const reducer = (state: Ipayload[], action: { type: string; payload: any; }) => 
     }
 };
 
-let singletonDispatch : Dispatch<{ type: any; payload: Ipayload | string; }> | null = null;
+let singletonDispatch  = null;
 
-const PortalManager = (props: Readonly<Iprops>) => {
-    const [state, dispatch] = React.useReducer(reducer, []);
+const PortalManager = (props) => {
+    const [state, dispatch] = useReducer(reducer, []);
     
-    React.useEffect(() => {
+    useEffect(() => {
         singletonDispatch = dispatch;
         defaultConfig = {...defaultConfig, ...props.config};
     }, [dispatch, props.config]);
 
-    const handleClose: (id: string) => void = React.useCallback((id) => {
+    const handleClose = useCallback((id) => {
         dispatch({
             type: "UNREGISTER",
             payload: id
@@ -61,7 +40,7 @@ const PortalManager = (props: Readonly<Iprops>) => {
 
     return <div className={styles.wrapper}>
         <div className={styles.groupWrapper}>
-            {state.map((payload: Ipayload) => {
+            {state.map((payload) => {
                 return <Modal key={payload.uniqueID} id={payload.uniqueID} handleClose={handleClose} config={{...defaultConfig, ...props.config, ...payload.config}} component={payload.node}/>
             })}
         </div>
@@ -71,7 +50,7 @@ const PortalManager = (props: Readonly<Iprops>) => {
 
 export default PortalManager;
 
-export const push =  (node: React.ComponentType<InodeProps>, config?: Iconfig) => {
+export const push =  (node, config) => {
     const timestamp = new Date().getTime();
     const uniqueID  = timestamp + "-" + Math.round(Math.random() * 1000);
     if(singletonDispatch) {

@@ -1,10 +1,9 @@
 import React from "react";
 import styles from "./style.module.css";
-import { InodeProps } from "../../manager";
 import Close from  "./close.svg";
 import Tick from "./tick.svg";
 
-export default (props: InodeProps) => {
+export default (props) => {
     return <div className={`${styles.App} ${styles.size}`}>
       <span className={styles.icon}>
         <img src={Tick} height="25px" width="25px" />

@@ -1,19 +1,23 @@
 const path = require('path');
 
 module.exports = {
-    entry: path.join(__dirname, './src/index.tsx'),
+    entry: path.join(__dirname, './src/index.js'),
     output: {
         filename: 'react-portal-toaster.js',
-        path: path.join(__dirname, 'dist')
+        path: path.join(__dirname, 'dist'),
+        libraryTarget: 'commonjs2'
     },
     mode: "production",
+    devtool: "source-map",
     module: {
         rules: [
-            {
-                test: /\.(tsx|js)?$/,
-                loader: 'ts-loader',
-                exclude: /node_modules/,
-            },
+          {
+            test: /\.js$/,
+            exclude: /(node_modules)/,
+            use: {
+              loader: 'babel-loader'
+            }
+          },
             {
                 test: /\.css$/,
                 use: [
@@ -37,13 +41,13 @@ module.exports = {
     },
     optimization: {
 		// We do not want to minimize our code.
-		minimize: true
+		minimize: false
 	},
   resolve: {
       extensions: [".tsx", ".ts", ".js"]
   },
   externals: {
-    "react": "React",
-    "react-dom": "ReactDom"
-  }
+    'react': 'react',
+    'react-dom': 'react-dom'
+ }
 };

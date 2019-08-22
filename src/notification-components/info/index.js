@@ -1,13 +1,12 @@
 import React from "react";
 import styles from "./style.module.css";
-import { InodeProps } from "../../manager";
 import Close from  "./close.svg";
-import Error from "./error.svg";
+import Info from "./info.svg";
 
-export default (props: InodeProps) => {
+export default (props) => {
     return <div className={`${styles.App} ${styles.size}`}>
       <div className={styles.icon}>
-        <img src={Error} height="25px" width="25px" />
+        <img src={Info} height="25px" width="25px" />
       </div>
       <div className={styles.body}>
         {props.children}
