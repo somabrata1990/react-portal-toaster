@@ -1,4 +1,4 @@
-import React, { SyntheticEvent, Children, ReactNode, ReactChildren } from 'react';
+import React from 'react';
 
 
 const Modal = (props) => {
